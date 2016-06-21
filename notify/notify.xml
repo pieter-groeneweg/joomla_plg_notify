@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.5" type="plugin" group="content" method="upgrade">
+	<name>plg_content_notify</name>
+	<author>Pieter Groeneweg</author>
+	<creationDate>June 2016</creationDate>
+	<copyright>Copyright (C) Pieter Groeneweg</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<authorEmail>info@bizgo.nl</authorEmail>
+	<authorUrl>bizgo.nl</authorUrl>
+	<version>0.0.1</version>
+	<description>PLG_CONTENT_NOTIFY_XML_DESCRIPTION</description>
+	<files>
+		<filename plugin="notify">notify.php</filename>
+		<folder>language</folder>
+	</files>
+	<languages>
+		<language tag="en-GB" client="site">language/site/en-GB/en-GB.plg_content_notify.ini</language>
+		<language tag="en-GB" client="administrator">language/admin/en-GB/en-GB.plg_content_notify.ini</language>
+		<language tag="en-GB" client="administrator">language/admin/en-GB/en-GB.plg_content_notify.sys.ini</language>
+	</languages>
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field name="select_usergroup_notify"
+					type="radio"
+					class="btn-group btn-group-yesno"
+					default="0"
+					description="PLG_CONTENT_NOTIFY_FIELD_SELECT_USERGROUP"
+					label="PLG_CONTENT_NOTIFY_FIELD_SELECT_USERGROUP_LABEL">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="email_usergroup_notify"
+					type="usergroup"
+					label="PLG_CONTENT_NOTIFY_CONFIG_FIELD_USER_GROUP_LABEL"
+					description="PLG_CONTENT_NOTIFY_CONFIG_FIELD_USER_GROUP" 
+					multiple="true" showon="select_usergroup_notify:1" />
+			</fieldset>
+		</fields>
+	</config>
+</extension>
